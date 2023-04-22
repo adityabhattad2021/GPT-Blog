@@ -27,7 +27,7 @@ type TrendingProps = {};
 
 function Trending(props: TrendingProps) {
   return (
-    <section className="pt-3 pb-10 m-7">
+    <section className="pt-3 pb-10">
       <div className="flex items-center gap-3">
         <div className="bg-wh-900 py-2 px-8 text-wh-10 text-sm font-bold">
           TRENDING
