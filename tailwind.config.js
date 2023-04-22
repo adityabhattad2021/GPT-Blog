@@ -10,10 +10,10 @@ module.exports = {
       colors:{
         "wh-10":"#F4F4F4",
         "wh-50":"#fbfbfb",
-        "wh-100":"c9c9c9",
-        "wh-300":"939393",
-        "wh-500":"595959",
-        "wh-900":"0f0f0f",
+        "wh-100":"#c9c9c9",
+        "wh-300":"#939393",
+        "wh-500":"#595959",
+        "wh-900":"#0f0f0f",
         "accent-red":"#ea9648",
         "accent-orange":"#f6cf68",
         "accent-green":"#c2e9b4"
