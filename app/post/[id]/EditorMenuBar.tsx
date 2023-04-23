@@ -8,7 +8,7 @@ type Props = {
   editor: Editor | null;
 };
 
-const EditorMenuBar = ({ editor }: Props) => {
+function EditorMenuBar({ editor }: Props){
   if (!editor) {
     return null;
   }

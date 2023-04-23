@@ -3,6 +3,8 @@ import { FormattedPost } from "@/app/types";
 import React, { useState } from "react";
 import Image from "next/image";
 import SocialLinks from "@/app/(shared)/SocialLinks";
+import { Editor, useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
 
 type Props = {
     post: FormattedPost;
@@ -26,19 +28,67 @@ function Content(props: Props) {
 
     function handleIsEditable(bool: boolean) {
         setIsEditable(bool);
+        editor?.setEditable(bool);
     }
 
     function handleOnContentChange({ editor }: any) {
+        if (!(editor as Editor).isEmpty) {
+            setContentError("");
+            setContent((editor as Editor).getHTML());
+        }
+    }
+
+    async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+        if (title === "") setTitleError("This field is required.");
+        if (editor?.isEmpty) setContentError("This field is required.");
+        if (title === "" || editor?.isEmpty) return;
+
+        const response = await fetch(
+            `${process.env.NEXT_PUBLIC_URL}/api/post/${props?.post?.id}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title: title,
+                    content: content,
+                }),
+            }
+        );
+
+        const data = await response.json();
+
+        handleIsEditable(false);
+        setTempTitle("");
+        setTempContent("");
+
+        setTitle(data.title);
+        setContent(data.content);
+        editor?.commands.setContent(data.content);
 
     }
 
-    function handleSubmit() {
-
+    function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        if (title) {
+            setTitleError("");
+            setTitle(e.target.value);
+        }
     }
 
-    function handleTitleChange() {
-
-    }
+    const editor = useEditor({
+        extensions: [StarterKit],
+        onUpdate: handleOnContentChange,
+        editorProps: {
+            attributes: {
+                class:
+                    "prose prose-sm xl:prose-2xl leading-8 focus:outline-none w-full max-w-full",
+            },
+        },
+        content: content,
+        editable: isEditable,
+    });
 
     return (
         <div className="prose w-full max-w-full">
