@@ -24,8 +24,22 @@ function Article({
         return null;
     }
 
-    function postGeneratedContent() {
+    async function postGeneratedContent() {
+        editor?.chain().focus().setContent("Generating, Please wait...").run()
 
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/openai`,{
+            method:"POST",
+            // @ts-ignore
+            header:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                title:title,
+                role:role,
+            })
+        })
+        const data = await response.json();
+
+        editor?.chain().focus().setContent(data.content).run();
+        setContent(data.content);
     }
 
     return (
