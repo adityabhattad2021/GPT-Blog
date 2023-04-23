@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import SocialLinks from "./SocialLinks";
+import Image from "next/image";
 
 type Props = {}
 
@@ -30,7 +31,12 @@ function Navbar(props:Props){
                     </p>
                 </div>
                 <div className="basis-full relative w-auto h-32 bg-wh-500">
-                    Image will go here
+                    <Image
+                        src={"https://source.unsplash.com/1600x900/?ai"}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        alt="tech"
+                    />
                 </div>  
             </div>
             <hr

@@ -1,7 +1,10 @@
 import React from "react";
 import Card from "app/(shared)/Card";
+import { Post } from "@prisma/client";
 
-type Props={}
+type Props={
+    techPosts:Array<Post>
+}
 
 function Tech(props:Props){
     return(
@@ -16,25 +19,30 @@ function Tech(props:Props){
                 </p>
             </div>
             <div className="sm:grid grid-cols-2 grid-rows-3 gap-8 my-5">
+
                 <Card
-                    className="bg-wh-500 col-span-1 row-span-3"
+                    className="col-span-1 row-span-3"
                     imageHeight="h-96"
                     isLongForm={true}
+                    post={props.techPosts[0]}
                 />
                 <Card
-                    className="bg-wh-500 col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3"
+                    className="col-span-1 row-span-3"
                     imageHeight="h-96"
                     isLongForm={true}
+                    post={props.techPosts[0]}
                 />
                 <Card
-                    className="bg-wh-500 col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3"
+                    className="col-span-1 row-span-3"
                     imageHeight="h-96"
                     isLongForm={true}
+                    post={props.techPosts[0]}
                 />
                 <Card
-                    className="bg-wh-500 col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3"
+                    className="col-span-1 row-span-3"
                     imageHeight="h-96"
                     isLongForm={true}
+                    post={props.techPosts[0]}
                 />
             </div>
            

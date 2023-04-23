@@ -1,6 +1,7 @@
 import React from "react";
 import SocialLinks from "./SocialLinks";
 import Subscribe from "./Subscribe";
+import Image from "next/image";
 
 type Props = {};
 
@@ -17,7 +18,14 @@ function Sidebar() {
       <h4 className="bg-wh-900 py-3 px-5 text-wh-50 text-xs font-bold text-center">
         About the Blog
       </h4>
-      <div className="bg-wh-500 flex justify-center py-3 mt-5"></div>
+      <div className="h-[200px] relative flex justify-center py-3 mt-5">
+        <Image  
+          src={"https://source.unsplash.com/1600x900/?blockchain"}
+          fill
+          style={{ objectFit: "cover" }}
+          alt="tech"
+        />
+      </div>
       <h4 className="py-3 px-5 text-wh-500 font-bold text-center">
         Some Name
       </h4>
