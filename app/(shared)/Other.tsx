@@ -15,6 +15,7 @@ function Others(props:Props){
                 {
                     props?.otherPosts.map((post:Post)=>(
                         <Card
+                            key={post?.id}
                             className=" mt-5 sm:mt-0"
                             imageHeight="h-80"
                             post={post}

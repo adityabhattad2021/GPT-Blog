@@ -24,6 +24,7 @@ function Travel(props: Props) {
                 {props?.travelPosts.map((post: Post) => {
                     return (
                         <Card
+                            key={post?.id}
                             className="basis-1/3  mt-5 sm:mt-0"
                             imageHeight="h-80"
                             post={post}
