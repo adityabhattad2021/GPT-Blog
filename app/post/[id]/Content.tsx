@@ -5,6 +5,8 @@ import Image from "next/image";
 import SocialLinks from "@/app/(shared)/SocialLinks";
 import { Editor, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import CategoryAndEdit from "./CategoryAndEdit";
+import Article from "./Article";
 
 type Props = {
     post: FormattedPost;
@@ -95,6 +97,18 @@ function Content(props: Props) {
             <h5 className="text-wh-300">
                 {`Home > ${props?.post?.category} > ${props?.post?.title}`}
             </h5>
+            <CategoryAndEdit
+                isEditable={isEditable}
+                handleIsEditable={handleIsEditable}
+                title={title}
+                setTitle={setTitle}
+                tempTitle={tempTitle}
+                setTempTitle={setTempTitle}
+                tempContent={tempContent}
+                setTempContent={setTempContent}
+                editor={editor}
+                post={props?.post}
+            />
             <form onSubmit={handleSubmit}>
                 <>
                     {
@@ -124,8 +138,6 @@ function Content(props: Props) {
                             {formattedDate}
                         </h6>
                     </div>
-
-
                 </>
                 <div className="relative w-auto mt-2 mb-16 h-96">
                     <Image
@@ -135,6 +147,13 @@ function Content(props: Props) {
                         style={{ objectFit: "cover" }}
                     />
                 </div>
+                <Article
+                    contentError={contentError}
+                    editor={editor}
+                    isEditable={isEditable}
+                    setContent={setContent}
+                    title={title}
+                />
 
                 {
                     isEditable && (
