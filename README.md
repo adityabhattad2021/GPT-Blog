@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GPT Blog
+GPT Blog is a blogging platform that aims to assist the writers with writing blog posts. It utilizes the power of OpenAI's GPT-3.5 Turbo model to generate blog posts automatically. .
 
-## Getting Started
+## Tech Stack
+- Nextjs 13
+- OpenAI API
+- Prisma
+- PlanetScale DB
+- Tip Tap Text Editor
 
-First, run the development server:
+## Features
+- Saves blog posts to the database
+- Generates blog posts using OpenAI GPT-3.5 Turbo model
+- Edit blog functionality using Tip Tap Text Editor
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Preview:
+![gpt-1](https://user-images.githubusercontent.com/93488388/233859956-e03c31bb-1260-4f1d-bf5a-6ac83ab84a2d.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![gpt-1 5](https://user-images.githubusercontent.com/93488388/233859965-43a88a8e-28c5-4e8e-b30b-4d16f3121449.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![gpt-2](https://user-images.githubusercontent.com/93488388/233859971-92d47517-8184-469f-a5d1-47ab5f731547.png)
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br/>
+<h4>I created this project to learn about the Nextjs 13 framework, OpenAI API, and Prisma ORM. GPT-Blog is still incomplete, but I'm working on adding more features. Feel free to check out the code.<h4/>
